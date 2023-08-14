@@ -2,24 +2,19 @@
 
 
 /**
- * main - program that prints the alphabet in lowercase and upper case
+ * main - program that prints the digits numbers.
  *
  * Return: Always 0.
  */
 
 int main(void)
+
 {
-	char letter;
+	char num;
 
-	for (letter = 'a'; letter <= 'z'; letter++)
+	for (num = '0'; num <= '9'; num++)
 
-	{
-	if (letter != 'e' && letter != 'q')
-	putchar(letter);
-	}
+return (0);
 
-	putchar('\n');
-
-	return (0);
 }
 
