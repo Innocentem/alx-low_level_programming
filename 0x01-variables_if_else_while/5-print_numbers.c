@@ -1,20 +1,18 @@
 #include <stdio.h>
-
+#include <unistd.h>
 
 /**
- * main - program that prints the digits numbers.
- *
- * Return: Always 0.
+ * main - Entry point
+ * Description: prints char below 10
+ * Return: Always 0 (success)
  */
 
 int main(void)
-
 {
-	char num;
+	int a;
 
-	for (num = '0'; num <= '9'; num++)
-
-return (0);
-
+	for (a = 0; a < 10; a++)
+	putchar(a + '0');
+	putchar('\n');
+	return (0);
 }
-
