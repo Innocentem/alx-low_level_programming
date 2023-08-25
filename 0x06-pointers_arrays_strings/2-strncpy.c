@@ -1,51 +1,26 @@
 #include "main.h"
 
 /**
-
- * _strncpy - copy a string
-
- * @dest: input value
-
- * @src: input value
-
- * @n: input value
-
+ * _strncpy - function to copy string
  *
-
- * Return: dest
-
+ * @dest: string to copy to
+ * @src: string to copy from
+ * @n: number of chars to copy
+ * Return: char pointer
  */
-
 char *_strncpy(char *dest, char *src, int n)
-
 {
+	int i, j;
 
-        int j;
-
-
-        j = 0;
-
-        while (j < n && src[j] != '\0')
-
-        {
-
-                dest[j] = src[j];
-
-                j++;
-
-        }
-
-        while (j < n)
-
-        {
-
-                dest[j] = '\0';
-
-                j++;
-
-        }
-
-
-        return (dest);
-
+	for (i = 0; i < n; i++)
+	{
+		if (src[i] == '\0')
+		{
+			for (j = i; j < n && dest[j] != '\0'; j++)
+				dest[j] = '\0';
+			break;
+		}
+		dest[i] = src[i];
+	}
+	return (dest);
 }

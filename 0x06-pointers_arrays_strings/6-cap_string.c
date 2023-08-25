@@ -1,67 +1,34 @@
 #include "main.h"
 
-
 /**
-
- * cap_string - Capitalizes all words of a string.
-
- * @str: The string to be capitalized.
-
+ * cap_string - capitalizes chars in a string following a separator
  *
-
- * Return: A pointer to the changed string.
-
+ * @c: character string pointer
+ * Return: char pointer
  */
-
-char *cap_string(char *str)
-
+char *cap_string(char *c)
 {
+	int i = 0, j,
+	sep[] = {32, '\t', 11,  '\n', 44, 59, 46, 33, 63, 34, 40, 41, 123, 125};
 
-        int index = 0;
-
-
-        while (str[index])
-
-        {
-
-
-                if (str[index - 1] == ' ' ||
-
-                    str[index - 1] == '\t' ||
-
-                    str[index - 1] == '\n' ||
-
-                    str[index - 1] == ',' ||
-
-                    str[index - 1] == ';' ||
-
-                    str[index - 1] == '.' ||
-
-                    str[index - 1] == '!' ||
-
-                    str[index - 1] == '?' ||
-
-                    str[index - 1] == '"' ||
-
-                    str[index - 1] == '(' ||
-
-                    str[index - 1] == ')' ||
-
-                    str[index - 1] == '{' ||
-
-                    str[index - 1] == '}' ||
-
-                    index == 0)
-
-                    if (str[index] >='a'&& str[index] <= 'z')
-			    str[index] -=32;
-
-
-                index++;
-
-        }
-
-
-        return (str);
-
+	if (c[0] > 96 && c[0] < 123)
+		c[0] -= 32;
+	while (c[i] != '\0')
+	{
+		if (c[i] > 96 && c[i] < 123)
+		{
+			j = 0;
+			while (j < 14)
+			{
+				if (c[i - 1] == sep[j])
+				{
+					c[i] -= 32;
+					break;
+				}
+				j++;
+			}
+		}
+		i++;
+	}
+	return (c);
 }
